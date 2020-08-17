@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import UserLogin from "./UserLogin/UserLogin";
 import AdminLogin from "./AdminLogin/AdminLogin";
 import RegisterPage from "./RegisterPage/RegisterPage";
-import UserDashboard from "./Userdashboard/UserDashboard";
+import UserDashboard from "./UserDashboard/UserDashboard";
 import AdminDashboard from "./AdminDashboard/AdminDashboard";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
                 <UserDashboard />
             </Route>
             <Route path="/adminDashboard" exact>
-                A<AdminDashboard />
+                <AdminDashboard />
             </Route>
         </>
     );
