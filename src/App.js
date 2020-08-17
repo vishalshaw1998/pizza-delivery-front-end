@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import LoginPage from "./LoginPage/LoginPage";
+import { Route } from "react-router-dom";
+import UserLogin from "./UserLogin/UserLogin";
+import AdminLogin from "./AdminLogin/AdminLogin";
+import RegisterPage from "./RegisterPage/RegisterPage";
+import UserDashboard from "./Userdashboard/UserDashboard";
+import AdminDashboard from "./AdminDashboard/AdminDashboard";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Route path="/" exact>
+                <LoginPage />
+            </Route>
+            <Route path="/userLogin" exact>
+                <UserLogin />
+            </Route>
+            <Route path="/adminLogin" exact>
+                <AdminLogin />
+            </Route>
+            <Route path="/register" exact>
+                <RegisterPage />
+            </Route>
+            <Route path="/userDashboard" exact>
+                <UserDashboard />
+            </Route>
+            <Route path="/adminDashboard" exact>
+                A<AdminDashboard />
+            </Route>
+        </>
+    );
 }
 
 export default App;
