@@ -4,7 +4,7 @@ function Carousel() {
     return (
         <div
             id="carouselExampleIndicators"
-            className="carousel slide"
+            className="carousel slide mt-3"
             data-ride="carousel"
         >
             <ol className="carousel-indicators">

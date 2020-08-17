@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 import UserHome from "./UserHome";
 
+export const PizzaCountContext = React.createContext();
+export const ChangeViewContext = React.createContext();
 function UserDashboard() {
+    const [pizza, setpizza] = useState([
+        { name: "Homemade", count: 0, price: 100 },
+        { name: "Barbeque", count: 0, price: 200 },
+        { name: "Cauliflower", count: 0, price: 300 },
+        { name: "Burst", count: 0, price: 400 },
+        { name: "New York", count: 0, price: 500 },
+        { name: "Onion", count: 0, price: 600 },
+        { name: "Pepperoni", count: 0, price: 700 },
+        { name: "Margherita", count: 0, price: 800 },
+        { name: "Corn", count: 0, price: 900 },
+    ]);
     const [view, setview] = useState("home");
     return (
         <>
@@ -65,11 +78,17 @@ function UserDashboard() {
                     </ul>
                 </div>
             </nav>
-            <div className="container">
-                {view === "home" && <UserHome />}
-                {view === "createPizza" && <span>This is Create Pizza</span>}
-                {view === "cart" && <span>This is Cart</span>}
-            </div>
+            <PizzaCountContext.Provider value={{ pizza, setpizza }}>
+                <ChangeViewContext.Provider value={{ view, setview }}>
+                    <div className="container">
+                        {view === "home" && <UserHome />}
+                        {view === "createPizza" && (
+                            <span>This is Create Pizza</span>
+                        )}
+                        {view === "cart" && <span>This is Cart</span>}
+                    </div>
+                </ChangeViewContext.Provider>
+            </PizzaCountContext.Provider>
         </>
     );
 }

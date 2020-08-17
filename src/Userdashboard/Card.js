@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import { PizzaCountContext } from "./UserDashboard";
 
 function Card(props) {
-    function handleClick(key) {
-        console.log(key);
+    const { pizza, setpizza } = useContext(PizzaCountContext);
+    function addItem(key) {
+        let tempPizza = [...pizza];
+        tempPizza[key].count += 1;
+        setpizza(tempPizza);
+    }
+    function deleteItem(key) {
+        let tempPizza = [...pizza];
+        tempPizza[key].count -= 1;
+        setpizza(tempPizza);
     }
     return (
         <div>
-            {console.log(props)}
-            <div
-                class="card"
-                style={{ width: "18rem" }}
-                onClick={() => handleClick(props.props.key)}
-            >
+            <div class="card" style={{ width: "18rem" }}>
                 <img
                     class="card-img-top"
                     src={require(`./assets/${props.props.src}.jpg`)}
@@ -25,16 +29,34 @@ function Card(props) {
                         Some quick example text to build on the card title and
                         make up the bulk of the card's content.
                     </p>
+                    <p className="font-weight-bold">
+                        Price : {`${props.props.price} INR`}
+                    </p>
                     <div className="font-weight-bold">
                         Please Select The Number Of Pizza
                     </div>
                     <div className="text-center">
-                        <button className="mr-3 btn-dark">
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                        </button>
-                        <span>0</span>
-                        <button className="ml-3 btn-dark">
+                        <button
+                            className="mr-3 btn-dark"
+                            disabled={
+                                pizza[props.props.key].count === 0
+                                    ? true
+                                    : false
+                            }
+                            onClick={() => {
+                                deleteItem(props.props.key);
+                            }}
+                        >
                             <i class="fa fa-minus " aria-hidden="true"></i>
+                        </button>
+                        <span>{pizza[props.props.key].count}</span>
+                        <button
+                            className="ml-3 btn-dark"
+                            onClick={() => {
+                                addItem(props.props.key);
+                            }}
+                        >
+                            <i class="fa fa-plus" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
