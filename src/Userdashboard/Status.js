@@ -8,7 +8,7 @@ function Status() {
         setloading(true);
         axios({
             method: "GET",
-            url: "http://localhost:3001/pizzaInfo",
+            url: "https://pizza-delivery-backend123.herokuapp.com/pizzaInfo",
             headers: {
                 authorization: localStorage.getItem("token"),
             },

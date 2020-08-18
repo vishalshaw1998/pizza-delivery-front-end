@@ -33,7 +33,7 @@ function Cart() {
         setloading(true);
         let res = await axios({
             method: "post",
-            url: "http://localhost:3001/placeOrder",
+            url: "https://pizza-delivery-backend123.herokuapp.com/placeOrder",
             data: {
                 pizzas: pizzaOrdered,
                 customPizza: customPizza,

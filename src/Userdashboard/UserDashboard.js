@@ -54,7 +54,7 @@ function UserDashboard() {
         } else {
             axios({
                 method: "get",
-                url: "http://localhost:3001/userInfo",
+                url: "https://pizza-delivery-backend123.herokuapp.com/userInfo",
                 headers: {
                     authorization: localStorage.getItem("token"),
                 },
