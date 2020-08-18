@@ -15,17 +15,17 @@ function Card(props) {
     }
     return (
         <div>
-            <div class="card" style={{ width: "18rem" }}>
+            <div className="card" style={{ width: "18rem" }}>
                 <img
-                    class="card-img-top"
+                    className="card-img-top"
                     src={require(`./assets/${props.props.src}.jpg`)}
                     alt="Card cap"
                     height="200px"
                     width="200px"
                 />
-                <div class="card-body">
-                    <h5 class="card-title">{props.props.title}</h5>
-                    <p class="card-text">
+                <div className="card-body">
+                    <h5 className="card-title">{props.props.title}</h5>
+                    <p className="card-text">
                         Some quick example text to build on the card title and
                         make up the bulk of the card's content.
                     </p>
@@ -47,7 +47,7 @@ function Card(props) {
                                 deleteItem(props.props.key);
                             }}
                         >
-                            <i class="fa fa-minus " aria-hidden="true"></i>
+                            <i className="fa fa-minus " aria-hidden="true"></i>
                         </button>
                         <span>{pizza[props.props.key].count}</span>
                         <button
@@ -56,7 +56,7 @@ function Card(props) {
                                 addItem(props.props.key);
                             }}
                         >
-                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            <i className="fa fa-plus" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>

@@ -19,3 +19,9 @@ code {
 ul {
     width: 100%;
 }
+th,
+td {
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+}
