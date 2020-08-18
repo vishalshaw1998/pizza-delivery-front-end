@@ -17,7 +17,7 @@ function UserLogin() {
         setloading(true);
         const res = await axios({
             method: "post",
-            url: "http://localhost:3001/login",
+            url: "https://pizza-delivery-backend123.herokuapp.com/login",
             data: {
                 username: username.current.value,
                 password: password.current.value,
