@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import UserLogin from "./UserLogin/UserLogin";
 import AdminLogin from "./AdminLogin/AdminLogin";
 import RegisterPage from "./RegisterPage/RegisterPage";
-import UserDashboard from "./UserDashboard/UserDashboard";
+import UserDashboard from "./Userdashboard/UserDashboard";
 import AdminDashboard from "./AdminDashboard/AdminDashboard";
 
 function App() {
